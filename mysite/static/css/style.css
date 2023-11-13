@@ -1,0 +1,18 @@
+.header {
+  background-color: #A6B6A9;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #F6F0EB;
+}
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  color: #9B4D47;
+  text-align: center;
+  width: 99%;
+  font-weight: bold;
+}
+
+
