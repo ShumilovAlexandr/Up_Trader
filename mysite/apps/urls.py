@@ -6,7 +6,7 @@ from . import views
 
 urlpatterns = [
     path('', views.get_index, name='index'),
-    path('<str:url_items>/', views.get_items_menu, name='items_menu'),
+    # path('<str:url_items>/', views.get_items_menu, name='items_menu'),
 ]
 
 if settings.DEBUG:
