@@ -5,7 +5,7 @@ from ..models import Title
 register = template.Library()
 
 
-@register.simple_tag
-def draw_menu(menu_name):
-    menu_items = Title.objects.get()
-    return menu_items
+@register.inclusion_tag('templates/menu.html')
+def draw_menu(main_menu):
+    menu_items = Title.objects.all()
+    return {"menu_items": menu_items}

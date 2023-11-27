@@ -15,4 +15,8 @@
   font-weight: bold;
 }
 
-
+span .items_menu {
+  font-weight: bold;
+  margin-right: 30px; 
+  margin-left: 20px;
+}
