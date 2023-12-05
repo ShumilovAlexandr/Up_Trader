@@ -1,8 +1,9 @@
-.my-tags-menu {
-    padding: 10px;
+li {
+  list-style-type: none;
 }
-
-
+.menu {
+  display: flex;
+}
 
 
 .my-menu {
@@ -16,18 +17,29 @@
 }
 
 
-
-.my-sub-menu {
-  display: none;
+.my-menu li {
   position: absolute;
-  top: 100%;
   left: 0;
-  list-style: none;
-  padding-left: 0;
-  text-align: left;
-  white-space: nowrap;
-  background-color: #aaf0d1;
+  top: 100%;
+  display: none;
+  padding: 0;
 }
+
+.my-menu label:hover li {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
