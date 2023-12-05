@@ -1,7 +1,7 @@
 <ul class="menu">
     {% for menu in menu_items %}
         {% if not menu.parent %}
-            <label class="my-menu">{{ menu.name }}
+            <li>{{ menu.name }}
                 <ul>
                     {% for submenu in menu.parent_name.all %}
                         {% if submenu.parent == menu %}
@@ -9,7 +9,7 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
-            </label>
+            </li>
         {% endif %}
     {% endfor %}
 </ul>

@@ -1,23 +1,23 @@
 li {
   list-style-type: none;
 }
+
 .menu {
   display: flex;
+  position: relative;
 }
 
-
-.my-menu {
-  display: inline-block;
+.menu li {
+  position: relative;
   font-weight: bold;
-  margin-right: 25px;
+  margin-right: 35px;
 }
 
-.my-menu:hover {
+.menu li:hover {
   color: tomato;
 }
 
-
-.my-menu li {
+.menu ul {
   position: absolute;
   left: 0;
   top: 100%;
@@ -25,18 +25,9 @@ li {
   padding: 0;
 }
 
-.my-menu label:hover li {
-  display: block;
+.menu li:hover ul {
+  display: inline-block;
 }
-
-
-
-
-
-
-
-
-
 
 
 
