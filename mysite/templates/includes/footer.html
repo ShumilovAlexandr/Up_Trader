@@ -1,4 +1,8 @@
+{% load apps_tags %}
+
+
 <footer class="footer">
-    <p>Uptrader. 2023. All rights reserved.</p>
+    {% current_time "%Y" as the_time %}
+    <p>Uptrader. {{ the_time }}. All rights reserved.</p>
 </footer>
 

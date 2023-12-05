@@ -1,3 +1,37 @@
+.my-tags-menu {
+    padding: 10px;
+}
+
+
+
+
+.my-menu {
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 25px;
+}
+
+.my-menu:hover {
+  color: tomato;
+}
+
+
+
+.my-sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+  white-space: nowrap;
+  background-color: #aaf0d1;
+}
+
+
+
+
 .header {
   background-color: #A6B6A9;
   padding-top: 10px;
@@ -13,10 +47,4 @@
   text-align: center;
   width: 99%;
   font-weight: bold;
-}
-
-span .items_menu {
-  font-weight: bold;
-  margin-right: 30px; 
-  margin-left: 20px;
 }

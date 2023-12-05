@@ -1,6 +1,9 @@
-<div>
-    {% for m_item in menu_items %}
-        <span class="items_menu" style="font-weight: bold; margin-right: 30px; margin-left: 20px;">{{ m_item.name }}</span>
+<div class="menu">
+    {% for menu in menu_items %}
+
+        {% if not menu.parent %}
+            <label class="my-menu">{{ menu.name }}</label>
+        {% endif %}
+
     {% endfor %}
 </div>
-
