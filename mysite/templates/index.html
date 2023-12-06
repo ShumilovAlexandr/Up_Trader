@@ -1,6 +1,12 @@
 {% extends "templates/base.html" %}
 
+{% load apps_tags %}
+
 {% block content %}
+
+    <div class="my-tags-menu">
+        {% draw_menu 'main_menu' %}
+    </div>
 
 {% endblock content %}
 

@@ -1,53 +1,58 @@
+/*Стили убирают точки у li.*/
 li {
-  list-style-type: none;
-}
-
-.menu {
-  display: flex;
-  position: relative;
-}
-
-.menu li {
-  position: relative;
-  font-weight: bold;
-  margin-right: 35px;
-}
-
-.menu li:hover {
-  color: tomato;
-}
-
-.menu ul {
-  position: absolute;
-  left: 0;
-  top: 100%;
-  display: none;
-  padding: 0;
-}
-
-.menu li:hover ul {
-  display: inline-block;
+    list-style-type: None;
 }
 
 
-
-
-
-
-
+/*Стили редактируют и задают более-менее приемлемый вид для шапки и одвала.*/
 .header {
-  background-color: #A6B6A9;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: #F6F0EB;
+    background-color: #A6B6A9;
+    padding: 20px;
+    color: #F6F0EB;
 }
 
 .footer {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  color: #9B4D47;
-  text-align: center;
-  width: 99%;
-  font-weight: bold;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    color: #9B4D47;
+    text-align: center;
+    width: 99%;
+    font-weight: bold;
 }
+
+
+/* Стили для отображения вложенных подуровней при условии, что это не
+конкретные страницы с ссылками.*/
+.top {
+    position: relative;
+    display: lock;
+}
+
+.dropdown_menu {
+    display: none;
+    position: absolute;
+}
+
+.dropdown_menu li {
+    display: block;
+}
+
+.top:hover .dropdown_menu {
+    display: block;
+    position: relative;
+}
+
+
+
+
+/* Стили для меню первого уровня. Задают шрифт и цвет при наведении.*/
+.general_menu_item {
+    font-weight: bold;
+    max-width: 40px;
+}
+.general_menu_item:hover {
+    color: tomato;
+}
+
+

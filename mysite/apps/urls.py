@@ -7,6 +7,8 @@ from . import views
 urlpatterns = [
     path('', views.get_index, name='index'),
     # path('/<str:slug>')
+    # TODO это в уроке для динамических страниц (посмотри 22
+    #  урок для начала
 ]
 
 if settings.DEBUG:

@@ -36,6 +36,10 @@ class SubTitle(models.Model):
     def __str__(self):
         return self.name
 
+    # def get_absolute_url(self):
+    #     pass
+    # TODO в уроке 22 (для начала)
+
     class Meta:
         verbose_name = "Подзаголовок"
         verbose_name_plural = "Подзаголовки"

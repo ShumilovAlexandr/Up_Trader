@@ -1,15 +1,14 @@
-<ul class="menu">
+<div class="menu">
     {% for menu in menu_items %}
-        {% if not menu.parent %}
-            <li>{{ menu.name }}
+        <ul class="top">
+            {% if menu.parent is null %}
+                <li class="general_menu_item">{{ menu.name }}</li>
+            {% endif %}
+            {% for submenu in menu.parent_name.all %}
                 <ul>
-                    {% for submenu in menu.parent_name.all %}
-                        {% if submenu.parent == menu %}
-                            <li>{{ submenu.name }}</li>
-                        {% endif %}
-                    {% endfor %}
+                    <li class="dropdown_menu">{{ submenu }}</li>
                 </ul>
-            </li>
-        {% endif %}
+            {% endfor %}
+        </ul>
     {% endfor %}
-</ul>
+</div>
