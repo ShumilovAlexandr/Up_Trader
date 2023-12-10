@@ -1,16 +1,22 @@
-/*Стили убирают точки у li.*/
+/* Стили убирают точки у li. */
 li {
     list-style-type: None;
 }
 
+.main {
+    width: max-content;
+    position: relative;
+    display:inline-block;
+}
 
-/*Стили редактируют и задают более-менее приемлемый вид для шапки и одвала.*/
+
+/* Стили редактируют и задают более-менее приемлемый вид для шапки и подвала.
+*/
 .header {
     background-color: #A6B6A9;
     padding: 20px;
     color: #F6F0EB;
 }
-
 .footer {
     position: fixed;
     right: 0;
@@ -22,27 +28,28 @@ li {
 }
 
 
-/* Стили для отображения вложенных подуровней при условии, что это не
-конкретные страницы с ссылками.*/
-.top {
-    padding-left: 0;
-    margin-top: 10px;
-    margin-bottom: 0;
-    position: relative;
-    display: block;
-    max-width: max-content;
-}
-
-
-
-
-/* Стили для меню первого уровня. Задают шрифт и цвет при наведении.*/
-.general_menu_item {
+/*Стили для главного меню.*/
+.general_menu {
     font-weight: bold;
-    max-width: 40px;
 }
-.general_menu_item:hover {
+/* Изменение цвета главного меню при наведении. */
+.general_menu:hover {
     color: tomato;
+    display: block;
 }
 
+
+/* Стили для вложенного меню. */
+.nested_submenu{
+    display: none;
+    position: absolute;
+}
+
+
+
+/* Стили для конечных меню. */
+.item_menu {
+    display: none;
+    position: absolute;
+}
 

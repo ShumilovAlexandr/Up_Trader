@@ -1,27 +1,31 @@
-<ul>
+<ul class="main">
     {% for menu in menu_items %}
-        <!-- Сначала нужно получить заголовки первого уровня  -->
-        <li>{{ menu.name }}
-        {% if menu.child_name.all %}
-            <ul>
-                {% for child in menu.child_name.all %}
-                <li>
-                    {% if child.childrens.all %}
-                        <li>{{ child.name }}</li>
-                        <ul>
-                            {% for item in child.childrens.all %}
-                                <li>
-                                       <a href="{{ item.get_absolute_url }}">{{ item.name }}</a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        <li><a href="{{ child.get_absolute_url }}">{{ child.name }}</a></li>
-                    {% endif %}
-                </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
+        <li>
+            <li class="general_menu">{{ menu.name }}</li>
+            {% if menu.child_name.all %}
+                <ul>
+                    {% for child in menu.child_name.all %}
+                    <li>
+                        {% if child.childrens.all %}
+                            <li class="nested_submenu">{{ child.name }}</li>
+
+                            <ul>
+                                {% for item in child.childrens.all %}
+                                    <li class="item_menu">
+                                        <a href="{{ item.get_absolute_url }}">{{ item.name }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+
+                        {% else %}
+                            <li class="item_menu">
+                                <a href="{{ child.get_absolute_url }}">{{ child.name }}</a>
+                            </li>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </li>
     {% endfor %}
 </ul>
