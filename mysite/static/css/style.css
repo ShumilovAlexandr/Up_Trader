@@ -25,22 +25,12 @@ li {
 /* Стили для отображения вложенных подуровней при условии, что это не
 конкретные страницы с ссылками.*/
 .top {
+    padding-left: 0;
+    margin-top: 10px;
+    margin-bottom: 0;
     position: relative;
-    display: lock;
-}
-
-.dropdown_menu {
-    display: none;
-    position: absolute;
-}
-
-.dropdown_menu li {
     display: block;
-}
-
-.top:hover .dropdown_menu {
-    display: block;
-    position: relative;
+    max-width: max-content;
 }
 
 

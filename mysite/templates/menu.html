@@ -1,14 +1,27 @@
-<div class="menu">
+<ul>
     {% for menu in menu_items %}
-        <ul class="top">
-            {% if menu.parent is null %}
-                <li class="general_menu_item">{{ menu.name }}</li>
-            {% endif %}
-            {% for submenu in menu.parent_name.all %}
-                <ul>
-                    <li class="dropdown_menu">{{ submenu }}</li>
-                </ul>
-            {% endfor %}
-        </ul>
+        <!-- Сначала нужно получить заголовки первого уровня  -->
+        <li>{{ menu.name }}
+        {% if menu.child_name.all %}
+            <ul>
+                {% for child in menu.child_name.all %}
+                <li>
+                    {% if child.childrens.all %}
+                        <li>{{ child.name }}</li>
+                        <ul>
+                            {% for item in child.childrens.all %}
+                                <li>
+                                       <a href="{{ item.get_absolute_url }}">{{ item.name }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <li><a href="{{ child.get_absolute_url }}">{{ child.name }}</a></li>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        </li>
     {% endfor %}
-</div>
+</ul>

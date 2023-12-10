@@ -6,12 +6,8 @@ from . import views
 
 urlpatterns = [
     path('', views.get_index, name='index'),
-    # path('/<str:slug>')
-    # TODO это в уроке для динамических страниц (посмотри 22
-    #  урок для начала
+    path('page/<slug:page_slug>', views.show_page, name='page')
+
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL,
-                           document_root=settings.STATIC_ROOT)
 

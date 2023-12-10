@@ -2,14 +2,16 @@ import datetime
 
 from django import template
 
-from ..models import Title
+from ..models import (Title,
+                      SubTitle)
 
 register = template.Library()
 
 
 @register.inclusion_tag('templates/menu.html')
 def draw_menu(main_menu):
-    menu_items = Title.objects.select_related("parent").all()
+
+    menu_items = Title.objects.all().prefetch_related('child_name')
     return {
         "menu_items": menu_items,
     }
