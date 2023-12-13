@@ -18,3 +18,4 @@ def show_page(request, page_slug):
         'page_slug': page_slug
     }
     return render(request, 'templates/page.html', data)
+

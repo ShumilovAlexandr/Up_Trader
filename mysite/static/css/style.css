@@ -3,12 +3,13 @@ li {
     list-style-type: None;
 }
 
-.main {
+.my-tags-menu {
     width: max-content;
-    position: relative;
-    display:inline-block;
 }
 
+.menu {
+    width: max-content;
+}
 
 /* Стили редактируют и задают более-менее приемлемый вид для шапки и подвала.
 */
@@ -28,28 +29,4 @@ li {
 }
 
 
-/*Стили для главного меню.*/
-.general_menu {
-    font-weight: bold;
-}
-/* Изменение цвета главного меню при наведении. */
-.general_menu:hover {
-    color: tomato;
-    display: block;
-}
-
-
-/* Стили для вложенного меню. */
-.nested_submenu{
-    display: none;
-    position: absolute;
-}
-
-
-
-/* Стили для конечных меню. */
-.item_menu {
-    display: none;
-    position: absolute;
-}
 
