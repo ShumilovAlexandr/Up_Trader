@@ -17,18 +17,13 @@ li {
     background: #06BCB3;
 }
 
-#header_link {
-    text-decoration: none;
-    color: #fff;
-}
-
 /*Задаю цвет меню.*/
 .my-tags-menu {
     color: #fff;
 }
 
 /*Убираем ссылочное подчеркивание и придаем белый цвет*/
-.menu__subtitle, .menu__subtitle__item, .menu__general {
+.menu__subtitle, .menu__subtitle__item, .menu__general, #header_link {
     text-decoration: none;
     color: #fff;
 }
@@ -59,12 +54,10 @@ li {
     align-items: center;
     position: absolute;
     bottom: 0;
-    left: 250px;
-    margin-right: 150px;
+    padding-left: 250px;
     color: #304C5A;
-    width: 99%;
+    width: 100%;
     font-weight: bold;
-    text-align: center;
 }
 
 /* Стили используемые при наведении, для вывода скрытых пунктов меню и т.п.*/
