@@ -1,10 +1,27 @@
 {% extends "templates/base.html" %}
 
 {% block content %}
+    <div class="page__content">
 
+        {% if page.parent is not None and not page.childrens.all %}
+            <p>Контент для страницы сo слагом {{ page_slug }}</p>
+            <p>{{ page.name }}</p>
+            <p>Тут можно разместить пост, комментарии, картинки и т.п.</p>
 
-<p>Контент для страницы сo слагом {{ page_slug }}</p>
-<p>{{ page.name }}</p>
+        {% elif page.childrens.all %}
+            <p>Выберите интересующие разделы.</p>
+            {% for child in page.childrens.all %}
+                <p>
+                    <a href="{{ child.get_absolute_url }}">{{ child.name }}</a>
+                </p>
+            {% endfor %}
+        {% else %}
+            <p>Здесь будет какой-нибудь интересный текст либо позже будут
+                добавлены дополнительные пункты меню и эти подпункты будут
+                обображаться здесь.
+            </p>
+        {% endif %}
 
+    </div>
 {% endblock content %}
 

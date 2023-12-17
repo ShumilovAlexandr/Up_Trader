@@ -1,14 +1,33 @@
 <ul class="menu">
-    {% for menu in menu_items.all %}
-        {% if not menu.child_name.all and not menu.childrens.all %}
-            <a href="{{ menu.get_absolute_url }}"><li>{{ menu.name }}</li></a>
-        {% else %}
-                <li>{{ menu.name }}</li>
-            {% if menu.child_name.all %}
-                    {% include "templates/menu.html" with menu_items=menu.child_name %}
-                {% elif menu.childrens.all %}
-                    {% include "templates/menu.html" with menu_items=menu.childrens %}
+    {% for menu in menu_items %}
+        <li>
+            <a href="" class="menu__general">
+                {{ menu.name }}
+            </a>
+                {% if menu.child_name.all %}
+                    <ul>
+                        {% for subtitle in menu.child_name.all %}
+                            <li>
+                                <a href="{{ subtitle.get_absolute_url }}"
+                                   class="menu__subtitle">
+                                    {{ subtitle.name }}
+                                </a>
+                                {% if subtitle.childrens.all %}
+                                    <ul>
+                                        {% for item in subtitle.childrens.all %}
+                                            <li>
+                                                <a href="{{ item.get_absolute_url }}"
+                                                   class="menu__subtitle__item">
+                                                    {{ item.name }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
                 {% endif %}
-        {% endif %}
+        </li>
     {% endfor %}
 </ul>

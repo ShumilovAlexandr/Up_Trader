@@ -3,30 +3,70 @@ li {
     list-style-type: None;
 }
 
-.my-tags-menu {
-    width: max-content;
+/* Выставляю контент по ширине содержимого и убираю лишний отступ слева.*/
+.menu {
+    padding: 10px;
 }
 
-.menu {
-    width: max-content;
+/* Колонка с менюхой. */
+.sidebar{
+    position: fixed;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #06BCB3;
+}
+
+.my-tags-menu {
+    color: #fff;
+}
+
+/*Убираем ссылочное подчеркивание и придаем белый цвет*/
+.menu__subtitle, .menu__subtitle__item, .menu__general {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Чтоб текст контента на странице не наезжал на блок с меню. */
+.page__content{
+    position: absolute;
+    left: 280px;
+}
+
+/* Скрываю вложенное подменю и пункты меню.*/
+.menu__subtitle, .menu__subtitle__item {
+    display: none;
 }
 
 /* Стили редактируют и задают более-менее приемлемый вид для шапки и подвала.
 */
 .header {
-    background-color: #A6B6A9;
+    font-size: 22px;
+    text-align: center;
+    background-color: #048280;
     padding: 20px;
-    color: #F6F0EB;
+    color: #fff;
 }
 .footer {
     position: fixed;
     right: 0;
+    left: 0;
     bottom: 0;
-    color: #9B4D47;
+    color: #304C5A;
     text-align: center;
     width: 99%;
     font-weight: bold;
 }
 
+/* Стили используемые при наведении, для вывода скрытых пунктов меню и т.п.*/
+.menu__general:hover, .menu__subtitle:hover, .menu__subtitle__item:hover  {
+    color: #FFC046;
+}
 
+ul li:hover .menu__subtitle {
+    display: block;
+}
 
+ul li li:hover .menu__subtitle__item {
+    display: block;
+}
