@@ -13,7 +13,10 @@
 
 
     <div class="sidebar">
-        {% include "./includes/header.html" %}
+        <a href="/" id="header_link">
+            {% include "./includes/header.html" %}
+        </a>
+
         <nav class="my-tags-menu">
             {% draw_menu 'main_menu' %}
         </nav>
